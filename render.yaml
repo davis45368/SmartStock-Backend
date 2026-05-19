@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: smartstock-backend-api
+    env: node
+    plan: starter
+    region: ohio
+    rootDir: Backend
+    buildCommand: npm install && npm run build
+    startCommand: node dist/app.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
