@@ -58,6 +58,7 @@ Todas las rutas de inventario requieren `Authorization: Bearer <jwt>` (token de 
 
 | Método | Ruta | Descripción |
 |--------|------|-------------|
+| GET | `/` | Documentación HTML de la API (público) |
 | GET | `/health` | Health check (público) |
 | GET | `/api/inventory` | Listar productos |
 | GET | `/api/inventory/alerts` | Productos en punto de reorden |

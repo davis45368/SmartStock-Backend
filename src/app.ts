@@ -10,6 +10,7 @@ import { WhatsAppNotificationHelper } from './infrastructure/adapters/external/W
 import { ProductController } from './presentation/controllers/ProductController';
 import { errorHandler } from './presentation/middlewares/ErrorHandler';
 import { createProductRouter } from './presentation/routers/ProductRouter';
+import { renderApiDocumentationPage } from './presentation/views/apiDocumentationPage';
 import { ensureDatabaseSchema } from './infrastructure/database/ensureDatabaseSchema';
 import { seedDemoAuthUser } from './infrastructure/database/seedDemoAuth';
 import { seedDemoDataIfEmpty } from './infrastructure/database/seedDemoData';
@@ -17,6 +18,10 @@ import { seedDemoDataIfEmpty } from './infrastructure/database/seedDemoData';
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+app.get('/', (_req, res) => {
+  res.type('html').send(renderApiDocumentationPage());
+});
 
 app.get('/health', (_req, res) => {
   res.status(200).json({ status: 'ok' });

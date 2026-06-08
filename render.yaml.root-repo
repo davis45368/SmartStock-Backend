@@ -1,3 +1,6 @@
+# Usar este archivo como render.yaml en la RAÍZ del repo SmartStock-Backend
+# (cuando el código está en /src y package.json en la raíz, sin carpeta Backend/)
+
 services:
   - type: web
     name: smartstock-backend-api
